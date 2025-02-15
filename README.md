@@ -36,7 +36,7 @@ This repository contains a text-based adventure game that runs **entirely offlin
 
 1. **Clone the repository**:
    ```bash
-   git clone <YOUR-REPO-URL> my-local-ai-game
+   git clone <THE-REPO-URL>
    cd my-local-ai-game
 
 2. **Install Python dependencies**:

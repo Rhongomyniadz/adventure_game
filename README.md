@@ -48,3 +48,9 @@ This repository contains a text-based adventure game that runs **entirely offlin
     Download the required models (for example, DeepSeek, Qwen-VL, and Whisper) using:
     ```bash
     ollama pull <MODEL-NAME>
+
+## Usage
+
+1. **Run the Game**:
+   ```bash
+   python main.py

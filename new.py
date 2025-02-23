@@ -57,7 +57,6 @@ class GameEngine:
             print(f"Error calling model: {e}")
             return ""
 
-
     def generate_scene(self, model_choice):
         """Generate game scene using specified model via direct prompt composition."""
         prompt_template = ChatPromptTemplate.from_messages([
@@ -66,7 +65,8 @@ class GameEngine:
                 "Player State: {state}\n"
                 "Current Scene: {scene}\n"
                 "Previous Action: {action}\n"
-                "Respond with 2-3 paragraph scene description ending with 3 choices."
+                "Respond with 2-3 paragraph scene description ending with 3 choices.\n"
+                "Do not include any internal chain-of-thought or meta commentary in your output."
             )),
             ("human", "{input}")
         ])
@@ -83,7 +83,6 @@ class GameEngine:
         # Remove any internal chain-of-thought markers if present.
         scene_output = re.sub(r'<think>.*?</think>', '', scene_output, flags=re.DOTALL)
         return scene_output.strip()
-
 
     def handle_choice(self, choice):
         """Process player choice using Qwen-VL model"""
